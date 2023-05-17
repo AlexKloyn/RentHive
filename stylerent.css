@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+  }
+  
+  h1, h2, h3, h4 {
+    font-weight: normal;
+  }
+  
+  header {
+    background-color: #ffffff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 74px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-left: 20px;
+  }
+  
+  nav a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  ul li:before {
+      color: black;
+      display: inline-block;
+      width: 1em;
+  }
+  
+  .banner {
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(mainhouse.png) no-repeat center center fixed;
+    background-size: cover;
+
+  }
+  
+  .banner h2 {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    font-family: Shrikhand;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+  height: 50px;
+  width: 50px;
+  }
+  
+  .rental {
+    margin-bottom: 40px;
+    flex-basis: 50%;
+    padding: 0 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .rental img {
+    display: block;
+    max-width: 800px;
+    margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 5px solid #ffffff78; 
+    box-shadow: 1px 2px 10px #090808;
+  }
+  
+  .rental h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .rental p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .rental a {
+    background-color: black;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rental a:hover {
+    background-color: black;
+  }
+  
+  .footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  img { 
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover; 
+    object-position: bottom; 
+    }
+
+
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .rental {
+    flex-basis: 100%;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px;
+  }
+}
+
+  
+  
+  

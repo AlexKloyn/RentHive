@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>gallery</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylegallery.css">
+</head>
+<body>
+  <div class="header">
+    <div class="banner1">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="RentHive"></a>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="a1" href="index.html">Home</a></li>
+        <li><a class="a1" href="aboutUs.html">Company</a></li>
+        <li><a class="a1" href="contactUs.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+    
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <a href="https://images.wallpaperscraft.ru/image/single/kvartira_tsvety_stulia_73871_1920x1080.jpg" class="lightbox">
+      <img src="https://images.wallpaperscraft.ru/image/single/kvartira_tsvety_stulia_73871_1920x1080.jpg" alt="Photo 1"></a>
+    </div>
+    <a href="https://images.wallpaperscraft.ru/image/single/zelenyj_kvartira_korichnevyj_80244_1920x1080.jpg" class="lightbox">
+    <div class="col-md-4">
+      <img src="https://images.wallpaperscraft.ru/image/single/zelenyj_kvartira_korichnevyj_80244_1920x1080.jpg" alt="Photo 2"></a>
+    </div>
+    <a href="https://images.wallpaperscraft.ru/image/single/zala_kvartira_interer_80243_1920x1080.jpg" class="lightbox">
+    <div class="col-md-4">
+      <img src="https://images.wallpaperscraft.ru/image/single/zala_kvartira_interer_80243_1920x1080.jpg" alt="Photo 3"></a>
+    </div>
+    <a href="https://images.wallpaperscraft.ru/image/single/balkon_dom_kvartira_73526_1920x1080.jpg" class="lightbox">
+    <div class="col-md-4">
+      <img src="https://images.wallpaperscraft.ru/image/single/balkon_dom_kvartira_73526_1920x1080.jpg" alt="Photo 4"></a>
+    </div>
+    <a href="https://images.wallpaperscraft.ru/image/single/stil_megapolis_kvartira_82238_1920x1080.jpg" class="lightbox">
+    <div class="col-md-4">
+      <img src="https://images.wallpaperscraft.ru/image/single/stil_megapolis_kvartira_82238_1920x1080.jpg" alt="Photo 5"></a>
+    </div>
+    <a href="https://images.wallpaperscraft.ru/image/single/interer_komnata_kvartira_75521_1920x1080.jpg" class="lightbox">
+    <div class="col-md-4">
+      <img src="https://images.wallpaperscraft.ru/image/single/interer_komnata_kvartira_75521_1920x1080.jpg" alt="Photo 6"></a>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox-overlay"></div>
+  <div class="lightbox-container">
+    <button class="close-button">&times;</button>
+    <div class="lightbox-nav">
+      <button class="lightbox-prev">&#8249;</button>
+      <button class="lightbox-next">&#8250;</button>
+    </div>
+    <img src="" alt="" class="lightbox-image">
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2023 Rent. All rights reserved.</p>
+  </div>
+
+<div class="lightbox-overlay"></div>
+<div class="lightbox-container">
+  <button class="close-button">&times;</button>
+  <div class="lightbox-nav">
+    <button class="lightbox-prev">&#8249;</button>
+    <button class="lightbox-next">&#8250;</button>
+  </div>
+  <img src="" alt="" class="lightbox-image">
+</div>
+
+
+
+
+<script>
+const lightboxOverlay = document.querySelector('.lightbox-overlay');
+const lightboxContainer = document.querySelector('.lightbox-container');
+const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxLinks = document.querySelectorAll('.lightbox');
+const lightboxPrev = document.querySelector('.lightbox-prev');
+const lightboxNext = document.querySelector('.lightbox-next');
+
+let currentIndex = 0;
+
+lightboxLinks.forEach((link, index) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const href = link.getAttribute('href');
+    lightboxImage.setAttribute('src', href);
+    currentIndex = index;
+    lightboxOverlay.style.display = 'block';
+    lightboxContainer.style.display = 'flex';
+  });
+});
+
+lightboxPrev.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + lightboxLinks.length) % lightboxLinks.length;
+  const href = lightboxLinks[currentIndex].getAttribute('href');
+  lightboxImage.setAttribute('src', href);
+});
+
+lightboxNext.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % lightboxLinks.length;
+  const href = lightboxLinks[currentIndex].getAttribute('href');
+  lightboxImage.setAttribute('src', href);
+});
+
+const closeButton = document.querySelector('.close-button');
+
+closeButton.addEventListener('click', () => {
+  lightboxOverlay.style.display = 'none';
+  lightboxContainer.style.display = 'none';
+});
+
+
+</script>
+
+  </body>
+</html>
